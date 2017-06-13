@@ -29,7 +29,7 @@ public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
 
         FriendlyMessage message = getItem(position);
 
-        boolean isPhoto = message.getPhotoUrl() != null;
+        boolean isPhoto = message.getPhotoUrl() != null && !message.getPhotoUrl().equalsIgnoreCase("");
         if (isPhoto) {
             messageTextView.setVisibility(View.GONE);
             photoImageView.setVisibility(View.VISIBLE);
